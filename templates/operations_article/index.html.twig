@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello OperationsArticleController!{% endblock %}
+
+{% block body %}
+    <section class="articles">
+
+        {% for article in articles%}
+            <article>
+                <h2>{{article.name}}</h2>
+                <div class="content">
+                    <p>{{ article.price }}</p>
+                    <a href="{{ path('operations_article_show', {'id': article.id}) }}" class="btn btn-primary">Sélectionner</a>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}
