@@ -30,8 +30,15 @@ class OperationsArticleController extends AbstractController
         return $this->render('operations_article/home.html.twig');
     }
 
+//    /**
+//     * @Route("/operations/article/create", name="create")
+//     */
+//    public function create(){
+//        return $this->render('operations_article/create.html.twig');
+//    }
+
     /**
-     * @Route("/operations/article/{id}", name="operations_article_show")
+     * @Route("/operations/article/{id}", name="operations_article_show", requirements={"id":"\d+"})
      */
     public function show(Article $article){
         return $this->render('operations_article/show.html.twig', [
